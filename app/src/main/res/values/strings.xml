@@ -1,3 +1,6 @@
 <resources>
+    <!-- Launch activity strings -->
     <string name="app_name">Sinfonia</string>
+    <string name="app_description">Harmonize your world with the music you love. Everything in just one touch.</string>
+    <string name="btn_start_description">Start now!</string>
 </resources>
