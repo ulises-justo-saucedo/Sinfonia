@@ -19,7 +19,7 @@ class FirstActivity : AppCompatActivity() {
         initListeners()
     }
     private fun initComponents(){
-        AppFilesManager(this).initFolders()
+        AppFilesManager.initFolders(this)
         btnStart = findViewById(R.id.btn_start)
     }
     private fun initListeners(){
