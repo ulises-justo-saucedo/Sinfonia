@@ -7,18 +7,18 @@ import java.io.File
 class AppFilesManager {
     companion object{
         private val downloadFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-        fun initFolders(activity: AppCompatActivity){
-            var appMusicFile = activity.getExternalFilesDir("music")!!
-            if(!appMusicFile.exists()) appMusicFile.mkdir()
+        lateinit var songs : MutableList<File>
+        private val regexMP3 = Regex("^.+\\.mp3$")
+        fun refreshSongs(){
+            songs = getAllUserSongsInDownloadsFolder()
         }
-        fun getAllUserSongsInDownloadsFolder() : List<File> {
-            var files = mutableListOf<File>()
-            var validMP3FilePattern = "^.+\\.mp3$"
-            var regex = Regex(validMP3FilePattern)
+        private fun getAllUserSongsInDownloadsFolder() : MutableList<File> {
+            val files = mutableListOf<File>()
             for(file in downloadFile.listFiles()!!){
-                if(regex.matches(file.name)) files.add(file)
+                if(regexMP3.matches(file.name)) files.add(file)
             }
             return files
         }
+        fun userHasSongs(): Boolean = songs.isNotEmpty()
     }
 }
