@@ -1,10 +1,9 @@
 package com.sinfonia.files
 
 import android.os.Environment
-import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 
-class AppFilesManager {
+class AppSongsManager {
     companion object{
         private val downloadFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         lateinit var songs : MutableList<File>
