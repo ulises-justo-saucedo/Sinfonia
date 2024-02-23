@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_text">#FFFFFFFF</color>
     <color name="cv_background">#3b3f40</color>
+    <color name="btn_background">#6d756f</color>
+    <color name="ic_color">#e30bb1</color>
 </resources>

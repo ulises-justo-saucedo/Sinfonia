@@ -3,4 +3,8 @@
     <string name="app_name">Sinfonia</string>
     <string name="app_description">Harmonize your world with the music you love. Everything in just one touch.</string>
     <string name="btn_start_description">Start now!</string>
+
+    <!-- Main activity strings -->
+    <string name="tv_no_songs_message">Looks like you don\'t have any song yet</string>
+    <string name="btn_no_songs_message">Consider adding new songs</string>
 </resources>
