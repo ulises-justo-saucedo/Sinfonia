@@ -11,7 +11,7 @@
         android:id="@+id/cvNoSongs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,36 +29,8 @@
                 android:text="@string/tv_no_songs_message"
                 android:textAlignment="center"
                 android:textColor="@color/main_text"
+                android:padding="20dp"
                 android:textSize="20sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/btn_background"
-                android:fontFamily="@font/mainfont"
-                android:text="@string/btn_no_songs_message"
-                android:textAllCaps="false"
-                android:textColor="@color/main_text" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Bottom menu -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cv_background">
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_add"
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_add"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

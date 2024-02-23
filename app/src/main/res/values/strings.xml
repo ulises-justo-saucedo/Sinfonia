@@ -5,6 +5,5 @@
     <string name="btn_start_description">Start now!</string>
 
     <!-- Main activity strings -->
-    <string name="tv_no_songs_message">Looks like you don\'t have any song yet</string>
-    <string name="btn_no_songs_message">Consider adding new songs</string>
+    <string name="tv_no_songs_message">Looks like you don\'t have any song yet. Consider downloading new ones in your device</string>
 </resources>
