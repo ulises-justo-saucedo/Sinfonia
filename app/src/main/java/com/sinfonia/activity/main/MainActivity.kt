@@ -11,6 +11,7 @@ import com.sinfonia.activity.main.recyclerview.SongsAdapter
 import com.sinfonia.files.AppSongsManager
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var appSongsManager: AppSongsManager
     private lateinit var cvNoSongs: CardView
     private lateinit var rvSongs: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +19,20 @@ class MainActivity : AppCompatActivity() {
         hideSystemUI(this)
         setContentView(R.layout.activity_main)
         initComponents()
-        noSongsMessage()
+        loadUserSongs()
+        configView()
         initRecyclerView()
     }
     private fun initComponents(){
+        appSongsManager = AppSongsManager(this)
         cvNoSongs = findViewById(R.id.cvNoSongs)
         rvSongs = findViewById(R.id.rvSongs)
     }
-    private fun noSongsMessage(){
-        when(AppSongsManager.userHasSongs()){
+    private fun loadUserSongs(){
+        appSongsManager.refreshSongs()
+    }
+    private fun configView(){
+        when(appSongsManager.userHasSongs()){
             true -> hideNoSongsMessage()
             false -> showNoSongsMessage()
         }
@@ -41,6 +47,6 @@ class MainActivity : AppCompatActivity() {
     }
     private fun initRecyclerView(){
         rvSongs.layoutManager = LinearLayoutManager(this)
-        rvSongs.adapter = SongsAdapter(AppSongsManager.songs)
+        rvSongs.adapter = SongsAdapter(appSongsManager.songs)
     }
 }
