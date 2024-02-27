@@ -4,26 +4,35 @@ import android.app.Activity
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Environment
+import android.util.Log
 import com.sinfonia.activity.main.recyclerview.song.Song
+import java.io.File
 
 class AppSongsManager(private val context: Activity) {
-    private val downloadFile =
+    private val musicFolder =
+        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)
+    private val downloadFolder =
         Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-    lateinit var songs: MutableList<Song>
+    val songs = mutableListOf<Song>()
     private val regexMP3 = Regex("^.+\\.mp3$")
     fun refreshSongs() {
-        songs = getAllUserSongsInDownloadsFolder()
+        //songs = getAllSongs()
+        if(!downloadFolder.exists()){
+            downloadFolder.mkdir()
+        }
+        if(!musicFolder.exists()){
+            musicFolder.mkdir()
+        }
+        songs.clear()
+        getAllSongsFromFolder(musicFolder,songs)
+        getAllSongsFromFolder(downloadFolder,songs)
     }
-
-    private fun getAllUserSongsInDownloadsFolder(): MutableList<Song> {
-        val files = mutableListOf<Song>()
-        for (file in downloadFile.listFiles()!!) {
+    private fun getAllSongsFromFolder(folder: File,songsList: MutableList<Song>){
+        for (file in folder.listFiles()!!) {
             if (regexMP3.matches(file.name)){
-                files.add(Song(file, MediaPlayer.create(context, Uri.fromFile(file))))
+                songsList.add(Song(file, MediaPlayer.create(context, Uri.fromFile(file))))
             }
         }
-        return files
     }
-
     fun userHasSongs(): Boolean = songs.isNotEmpty()
 }
