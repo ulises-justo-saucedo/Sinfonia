@@ -1,8 +1,8 @@
-## Sinfonia
+# Sinfonia
 Sinfonia is a Android application made with Kotlin and Android Studio. It lets Android users
 to have an option to listen to their favorite songs without having to worry about live-stream services.
 
-# Set-Up
+# Set up
 You only need to accept the permission Sinfonia asks for when you press the "Start!" button in the launch activity.
 That permission is only for reading files.
 
