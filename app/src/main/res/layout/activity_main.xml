@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bc_main"
     tools:context=".activity.main.MainActivity">
+
     <!-- Special message if user has no songs yet -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cvNoSongs"
@@ -41,7 +42,22 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
+    <!-- Button to play random songs -->
+    <Button
+        android:id="@+id/btnPlayRandomSongs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/ic_color"
+        android:fontFamily="@font/mainfont"
+        android:text="@string/btn_random_songs"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textColor="@color/main_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

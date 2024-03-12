@@ -6,4 +6,5 @@
 
     <!-- Main activity strings -->
     <string name="tv_no_songs_message">Looks like you don\'t have any song yet. Consider downloading new ones in your device</string>
+    <string name="btn_random_songs">Play all songs in a random secuence!</string>
 </resources>

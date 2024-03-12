@@ -2,8 +2,6 @@ package com.sinfonia.activity.main.recyclerview
 
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -22,7 +20,6 @@ class SongsViewHolder(view: View): RecyclerView.ViewHolder(view) {
                 s.mediaPlayer.prepare()
             }
             song.mediaPlayer.start()
-            Log.i("TIME_SONG",song.mediaPlayer.timestamp.toString())
         }
         btnStop.setOnClickListener {
             song.mediaPlayer.pause()
